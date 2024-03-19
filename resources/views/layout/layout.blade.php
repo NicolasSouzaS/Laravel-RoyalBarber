@@ -45,11 +45,10 @@
                   <a class="nav-link dropdown-toggle" href="" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Serviços</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown04">
                     <a class="dropdown-item" href="{{ url ('/cortes') }}">Cortes de Cabelo</a>
-                    <a class="dropdown-item" href="hairstyle.html">Design de Barba</a>
-                    <a class="dropdown-item" href="hairstyle.html">Tratamentos Capilares</a>
-                    <a class="dropdown-item" href="hairstyle.html">Coloração de Barba e Cabelo</a>
-                    <a class="dropdown-item" href="hairstyle.html">Tratamentos de Relaxamento</a>
-                    <a class="dropdown-item" href="hairstyle.html">Produtos de Cuidados Masculinos</a>
+                    <a class="dropdown-item" href="{{ url ('/servicos/barba') }}">Design de Barba</a>
+                    <a class="dropdown-item" href="{{  url ('/servicos/tratamento')  }}">Tratamentos</a>
+                    <a class="dropdown-item" href="{{  url ('/servicos/coloracao')  }}">Coloração de Barba e Cabelo</a>
+                    <a class="dropdown-item" href="{{  url ('/servicos/cuidados')  }}">Produtos de Cuidados Masculinos</a>
                   </div>
 
                 </li>

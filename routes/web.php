@@ -25,7 +25,15 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/sobre', [SobreController::class, 'index'])->name('sobre');
 
+
+//ROUTE
 Route::get('/cortes', [CortesController::class, 'index'])->name('cortes');
+Route::get('/servicos/barba', [CortesController::class, 'barba'])->name('barba');
+Route::get('/servicos/coloracao', [CortesController::class, 'coloracao'])->name('coloracao');
+Route::get('/servicos/cuidados', [CortesController::class, 'cuidados'])->name('cuidados');
+Route::get('/servicos/tratamento', [CortesController::class, 'tratamento'])->name('tratamento');
+
+
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 
