@@ -482,8 +482,8 @@ textarea.form-control {
 }
 
 .btn.btn-primary:hover, .btn.btn-primary:active, .btn.btn-primary:focus {
-  border-color: #ff8f57;
-  background: #ff8f57;
+  border-color: #d35c20;
+  background: #d35c20;
 }
 
 .btn.btn-sm {
@@ -1253,5 +1253,9 @@ textarea.form-control {
     background-color: #d35c20;
 }
 
-
+.form-group input, .form-group textarea{
+    border-radius: 3px;
+    border: 2px solid #ff6d24;
+    background-color: #252424;
+}
 /* #endregion MUDANÇAS */
