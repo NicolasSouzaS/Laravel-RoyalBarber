@@ -21,7 +21,7 @@
 
 .login-box {
     width: 420px;
-    background: #fff;
+    background-color: #fff;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -35,8 +35,8 @@
 }
 
 .login-box img {
-    width: 160px;
-    height: 50px;
+    width: 230px;
+    height: 130px;
 }
 
 .textbox {
@@ -52,20 +52,21 @@
     width: 95%;
     padding: 10px;
     border: none;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ff5500;
     outline: none;
     font-size: 16px;
     color: #333;
     background: transparent;
+    font-weight: 500 ;
 }
 
 .textbox input:focus {
-    border-bottom: 1px solid #48C9B0;
+    border-bottom: 1px solid #ff5500;
 }
 
 .btn {
     width: 100%;
-    background: #28CED9;
+    background: #ff6d24;
     border: none;
     padding: 12px;
     cursor: pointer;
@@ -73,10 +74,11 @@
     font-size: 18px;
     color: #fff;
     transition: all 0.3s ease;
+    margin-bottom: 20px;
 }
 
 .btn:hover {
-    background: #24a6af;
+    background: #d35c20;
 }
 
 .signup-link {
@@ -91,4 +93,13 @@
 
 .signup-link a:hover {
     text-decoration: underline;
+}
+
+
+.link-cadastrar a{
+    color: #4b9fff;
+}
+
+.link-cadastrar a:hover{
+    color: #007bff;
 }

@@ -15,15 +15,23 @@
     <link rel="stylesheet" href="{{ asset ('css/login.css') }}">
 
     <link rel="shortcut icon" href="{{ asset ('images/iconroyalbarberBRANCO.png') }}" type="image/x-icon">
-    <title>Login - RoyalBarber</title>
+    <title>Cadastrar - RoyalBarber</title>
 </head>
-<body>
+<body style="background: url(../images/bg-cadastrar.png) no-repeat center">
     <div class="container">
         <div class="login-box">
             <img src="{{ asset ('images/logo-royalbarber-preto.png') }}" alt="">
-            <h2>Entre com seu login!</h2>
+            <h2>Crie sua conta!</h2>
             <form action="{{ route ('login') }}" method="POST" class="login-form">
                 @csrf
+                <div class="textbox">
+                    <input type="text" name="nome" placeholder="Nome:" value="{{ old('nome') }}">
+                    {{ $errors->has('nome') ? $errors->first('nome') : '' }}
+                </div>
+                <div class="textbox">
+                    <input type="text" name="telefone" placeholder="Telefone:" value="{{ old('telefone') }}">
+                    {{ $errors->has('telefone') ? $errors->first('telefone') : '' }}
+                </div>
                 <div class="textbox">
                     <input type="email" name="email" placeholder="Email:" value="{{ old('email') }}">
                     {{ $errors->has('email') ? $errors->first('email') : '' }}
@@ -32,11 +40,13 @@
                     <input type="password" name="password" placeholder="Senha:" value="{{ old ('password') }}">
                     {{ $errors->has('password') ? $errors->first('password') : '' }}
                 </div>
+
                 <input type="submit" class="btn" value="Entrar">
 
                 <div class="link-cadastrar">
-                    <a href="{{ url ('/cadastrar') }}">Não tem uma conta ainda? Cadastre-se aqui</a>
+                    <a href="{{ url ('/login') }}">Voltar para Login</a>
                 </div>
+
             </form>
         </div>
     </div>

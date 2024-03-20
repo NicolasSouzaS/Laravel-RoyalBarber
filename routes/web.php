@@ -36,6 +36,7 @@ Route::get('/servicos/tratamento', [CortesController::class, 'tratamento'])->nam
 
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::get('/cadastrar', [LoginController::class, 'cadastrar'])->name('cadastrar');
 
 
 // CONTATO

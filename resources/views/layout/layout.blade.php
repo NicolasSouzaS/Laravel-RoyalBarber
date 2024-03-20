@@ -19,6 +19,8 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="{{ asset ('css/style.css') }}">
+
+    <link rel="shortcut icon" href="images/iconroyalbarberBRANCO.png" type="image/x-icon">
   </head>
   <body>
 
