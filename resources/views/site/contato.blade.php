@@ -6,7 +6,7 @@
 
 
     <section class="site-hero overlay" data-stellar-background-ratio="0.5"
-        style="background-image: url(images/big_image_1.jpeg);">
+        style="background-image: url(images/bg-contato.jpeg);">
         <div class="container">
             <div class="row align-items-center site-hero-inner justify-content-center">
                 <div class="col-md-8 text-center">
@@ -106,7 +106,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-6 form-group">
+                            <div class="col-md-6 form-group-btn">
                                 <input type="submit" value="Enviar" class="btn btn-primary" e-mail" class="btn-enviar"
                                     onclick="formContato(event)">
                                 <div id="contatoMensagem" class="msgContato"></div>

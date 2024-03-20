@@ -1,82 +1,94 @@
 
-body {
+  /* font-family: 'Poppins', sans-serif; */
+  body {
+    background: url(../images/bg-login.png) no-repeat;
     margin: 0;
     padding: 0;
-    font-family: "Roboto", arial, sans-serif;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
 }
 
 .container {
+    width: 100%;
     display: flex;
-    height: 100vh;
-}
-
-.login-form {
-    flex: 1;
-    background-color: #000000;
-    color: white;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.login-form h2 {
-    margin-bottom: 20px;
+.login-box {
+    width: 420px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.input-container {
+.login-box h2 {
+    margin: 0 0 20px 0;
+    padding: 0;
+    color: #333;
+}
+
+.login-box img {
+    width: 160px;
+    height: 50px;
+}
+
+.textbox {
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.input-container i {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #999;
-}
-
-.input-container input {
-    width: 300px;
+.textbox input {
+    width: 95%;
     padding: 10px;
-    padding-left: 35px;
     border: none;
-    border-bottom: 2px solid #ccc;
+    border-bottom: 1px solid #ccc;
     outline: none;
-    border:none;
-    border-radius: 3px;
+    font-size: 16px;
+    color: #333;
+    background: transparent;
 }
 
-button {
+.textbox input:focus {
+    border-bottom: 1px solid #48C9B0;
+}
+
+.btn {
     width: 100%;
-    padding: 10px;
+    background: #28CED9;
     border: none;
-    background-color: #007bff;
-    color: #fff;
+    padding: 12px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #fff;
+    transition: all 0.3s ease;
 }
 
-button:hover {
-    background-color: #0056b3;
+.btn:hover {
+    background: #24a6af;
 }
 
-.image-container {
-    flex: 1;
-    background-size: cover;
-    background-position: center;
-    display: none; /* Esconde a imagem em telas menores */
+.signup-link {
+    margin-top: 20px;
+    font-size: 14px;
 }
 
-
-.image-container img{
-    width: 100%;
-    height: 100%;
+.signup-link a {
+    color: #007bff;
+    text-decoration: none;
 }
 
-@media (min-width: 768px) {
-    .image-container {
-        display: block;
-    }
+.signup-link a:hover {
+    text-decoration: underline;
 }
