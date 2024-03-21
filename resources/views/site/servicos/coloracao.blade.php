@@ -1,19 +1,19 @@
 @extends('layout.layout')
 
-@section('title','Cortes')
+@section('title','Coloração')
 
 @section('conteudo')
 
 
-    <section class="site-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(../images/big_image_1.jpg);">
+    <section class="site-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(../images/coloracao/coloracao.png);">
       <div class="container">
         <div class="row align-items-center site-hero-inner justify-content-center">
           <div class="col-md-8 text-center">
 
             <div class="mb-5 element-animate">
               <!-- <img src="images/banner_text_1.png" alt="Image placeholder" class="img-md-fluid"> -->
-              <h1 class="mb-4">Cortes de cabelo</h1>
-              <p class="lead">Descubra os Cortes de Cabelo Masculinos Mais Estilosos da Temporada na Nossa Barbearia!</p>
+              <h1 class="mb-4">Coloração</h1>
+              <p class="lead">Renove o seu visual com os serviços de coloração de cabelo e barba da nossa barbearia! </p>
             </div>
 
           </div>
@@ -63,112 +63,48 @@
 
 
     <section class="site-section pb-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 video-wrap mb-5">
-            <img src="images/cortes/americano.jpg" alt="Image placeholder" class="img-fluid">
-          </div>
-          <div class="col-md-6 pl-md-5">
-            <h3>Corte americano</h3>
-            <p class="lead">Um clássico atemporal</p>
-            <p>O corte de cabelo "americano" é um estilo clássico e atemporal que se destaca pela sua simplicidade e versatilidade. Caracterizado por cabelo mais curto nas laterais e na parte de trás da cabeça, com um topo mais longo e texturizado, o corte americano oferece um visual elegante e polido. </p>
-            <p> Este estilo é popular entre homens de todas as idades e é frequentemente adaptado para se adequar a diferentes tipos de cabelo e preferências de estilo. Com sua aparência limpa e acabamento bem cuidado, o corte de cabelo americano é uma escolha confiável para aqueles que procuram um visual clássico e sem complicações.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- END section -->
-
-    <section class="pt-5 pb-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 video-wrap mb-5">
-            <img src="images/cortes/lowFade.jpg" alt="Image placeholder" class="img-fluid">
-          </div>
-          <div class="col-md-6 pl-md-5">
-            <h3>Corte low fade</h3>
-            <p class="lead">Versatilidade e estilo</p>
-            <p>O "low fade" é um estilo de corte de cabelo masculino que tem ganhado popularidade nos últimos anos. Neste corte, as laterais e a parte de trás da cabeça são raspadas ou cortadas em gradiente, começando com o cabelo mais curto perto das orelhas e se desvanecendo gradualmente para uma linha de cabelo mais completa em direção à parte de trás da cabeça.</p>
-            <p>O "low fade" é conhecido por sua versatilidade e por complementar uma ampla variedade de estilos de cabelo, desde cortes curtos até penteados mais longos no topo da cabeça. Sua transição suave entre o cabelo mais curto e o comprimento mais longo torna-o uma escolha popular entre aqueles que desejam um visual limpo e elegante, sem comprometer a textura ou o estilo.</p>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 video-wrap mb-5">
+              <img src="../images/coloracao/coloracao.png" alt="Image placeholder" class="img-fluid">
+            </div>
+            <div class="col-md-6 pl-md-5">
+              <h3>Coloração de cabelo e barba</h3>
+              <p class="lead">Transforme seu visual com estilo</p>
+              <p>Descubra uma nova dimensão de estilo e personalidade com nossos serviços de coloração de cabelo e barba. Nossa equipe de especialistas em coloração está pronta para criar uma aparência única e vibrante que complementa sua individualidade. Explore uma variedade de tons e técnicas para encontrar o visual perfeito para você.</p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- END section -->
+      </section>
+      <!-- END section -->
 
-    <section class="pt-5 pb-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 video-wrap mb-5">
-            <img src="images/cortes/moicano.jpg" alt="Image placeholder" class="img-fluid">
-          </div>
-          <div class="col-md-6 pl-md-5">
-            <h3>Corte moicano</h3>
-            <p class="lead">Estilo e ousadia</p>
-            <p>O corte de cabelo "moicano" é um estilo ousado e distintivo que se destaca pela sua aparência única e marcante. Caracterizado por cabelo raspado ou muito curto nas laterais da cabeça e um topo mais longo, que pode ser estilizado para ficar em pé, o corte moicano transmite uma sensação de rebeldia e individualidade.</p>
-            <p>Este estilo ganhou popularidade entre aqueles que desejam uma aparência mais ousada e expressiva, muitas vezes associada a subculturas como punk e rock. Com sua estética audaciosa e atitude de destaque, o corte moicano é uma escolha ideal para aqueles que desejam fazer uma declaração de estilo forte e confiante.</p>
+      <section class="pt-5 pb-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 video-wrap mb-5">
+              <img src="../images/coloracao/nevou.jpg" alt="Image placeholder" class="img-fluid">
+            </div>
+            <div class="col-md-6 pl-md-5">
+              <h3>Descoloração do cabelo e da barba</h3>
+              <p class="lead">Explore novas possibilidades de estilo</p>
+              <p>Experimente a versatilidade e o charme da descoloração do cabelo e da barba. Com o low fade, você pode alcançar uma aparência sofisticada e contemporânea que se destaca na multidão. Deixe nossa equipe de especialistas em descoloração criar uma transição suave e elegante entre as diferentes tonalidades, proporcionando um visual único e marcante.</p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- END section -->
+      </section>
+      <!-- END section -->
 
+      <section class="pt-5 pb-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 video-wrap mb-5">
+              <img src="../images/coloracao/azul.jpg" alt="Image placeholder" class="img-fluid">
+            </div>
+            <div class="col-md-6 pl-md-5">
+              <h3>Pintar cabelo e barba</h3>
+              <p class="lead">Faça uma declaração de estilo ousada</p>
+              <p>Expresse sua individualidade com o corte moicano e uma pintura ousada de cabelo e barba. Nosso serviço de coloração permite que você explore uma variedade de cores e estilos. Às vezes, tudo o que precisamos é de uma mudança para nos sentirmos renovados e confiantes. Nossa equipe de especialistas em coloração está aqui para ajudá-lo a encontrar a tonalidade perfeita que realçará sua personalidade e estilo único. Seja para camuflar alguns fios grisalhos, experimentar uma nova cor ou simplesmente adicionar dimensão ao seu visual, nós temos as habilidades e os produtos certos para alcançar o resultado desejado.</p>
 
-
-    <section class="site-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-7 text-center">
-            <h2>Mais estilos</h2>
-            <p>Explore nossa galeria de cortes para descobrir uma variedade de estilos e encontrar aquele que melhor combina com você!</p>
-          </div>
-        </div>
-        <div class="row top-destination">
-          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-            <a href="#" class="place">
-              <img src="images/cortes/mullet.jpg" alt="Image placeholder" >
-              <h2>Corte mullet</h2>
-              <p>Marque seu horário</p>
-            </a>
-          </div>
-          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-            <a href="#" class="place">
-              <img src="images/cortes/highFade.jpg" alt="Image placeholder">
-              <h2>Corte high fade</h2>
-              <p>Marque seu horário</p>
-            </a>
-          </div>
-          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-            <a href="#" class="place">
-              <img src="images/cortes/militar.jpg" alt="Image placeholder">
-              <h2>Corte militar</h2>
-              <p>Marque seu horário</p>
-            </a>
-          </div>
-          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-            <a href="#" class="place">
-              <img src="images/cortes/social.jpg" alt="Image placeholder">
-              <h2>Corte social</h2>
-              <p>Marque seu horário</p>
-            </a>
-          </div>
-          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-            <a href="#" class="place">
-              <img src="images/cortes/doJaca.jpg" alt="Image placeholder">
-              <h2>Corte do jaca</h2>
-              <p>Marque seu horário</p>
-            </a>
-          </div>
-          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-            <a href="#" class="place">
-              <img src="images/cortes/careca.jpg" alt="Image placeholder">
-              <h2>Corte na zero</h2>
-              <p>Marque seu horário</p>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
     <!-- END section -->
 
 
