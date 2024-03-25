@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('especialidadeFuncionario', 100);
             $table->time('inicioExpedienteFuncionario'); // Corrigido
             $table->time('fimExpedienteFuncionario'); // Corrigido
-            $table->unsignedBigInteger('cargoFuncionario'); // Corrigido
+            $table->string('cargoFuncionario', 50); // Corrigido
             $table->foreign('cargoFuncionario')->references('id')->on('Cargos'); // Corrigido
             $table->integer('qntCortesFuncionario');
             $table->string('statusFuncionario', 10);

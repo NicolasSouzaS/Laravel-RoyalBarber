@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CadastrarController;
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\CortesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SobreController;
+use App\Models\Cadastrar;
 use Faker\Guesser\Name;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
@@ -37,7 +39,8 @@ Route::get('/servicos/tratamento', [CortesController::class, 'tratamento'])->nam
 //LOGIN
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login',[LoginController::class, 'autenticar'])->name('login');
-Route::get('/cadastrar', [LoginController::class, 'cadastrar'])->name('cadastrar');
+
+Route::post('/cadastrar', [CadastrarController::class, 'index'])->name('cadastrar');
 
 
 // CONTATO
