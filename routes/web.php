@@ -49,7 +49,8 @@ Route::get('/contato', [ContatoController::class, 'index'])->name('contato');
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login',[LoginController::class, 'autenticar'])->name('login');
 
-Route::post('/cadastrar', [CadastrarController::class, 'index'])->name('cadastrar');
+Route::get('/cadastrar', [CadastrarController::class, 'index'])->name('cadastrar');
+Route::post('/cadastrar', [CadastrarController::class, 'cadastrar'])->name('cadastrar');
 
 
 // AUTENTICAÇÃO DE GERENTE

@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Usuario extends Model
 {
-    use HasFactory;
-
+    protected $table = 'usuario';
     // Pegando o tipo do usuario(funcionário ou cliente ) e o id correspondente ao que há na tabela usuário.
     public function tipo_usuario(){
         return $this->morphTo('tipo_usuario', 'tipo_usuario_type', 'tipo_usuario_id');

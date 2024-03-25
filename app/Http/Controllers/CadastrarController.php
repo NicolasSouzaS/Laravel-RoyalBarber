@@ -19,7 +19,6 @@ class CadastrarController extends Controller
     {
 
         return view('site.cadastrar');
-
     }
 
     /**
@@ -40,49 +39,41 @@ class CadastrarController extends Controller
      */
     public function cadastrar(Request $request)
     {
+
         $request->validate([
             'nomeCadastrar'         => 'nullable|string|max:100',
             'sobrenomeCadastrar'    => 'nullable|string|max:200',
-            'emailCadastrar'        => 'nullable|email|max:250|unique:Usuario.emailCadastrar',
+            'emailCadastrar'        => 'nullable|email|max:250|unique:Usuario.emailUsuario',
             'senhaCadastrar'        => 'nullable|string|max:255',
             'telefoneCadastrar'     => 'nullable|string|max:11',
             'enderecocadastrar'     => 'nullable|string|max:255'
         ]);
 
-        $usuario = new Usuario();
         $cliente = new Cliente();
 
-        $ultimoUsuario = Usuario::latest('id')->first();
-        $ultimoId = $ultimoUsuario ? $ultimoUsuario->idUsuario : 0;
+        $cliente->nomeCliente       = $request->input('nomeCadastrar');
+        $cliente->sobrenomeCliente  = $request->input('sobrenomeCadastrar');
+        $cliente->emailCliente      = $request->input('emailCadastrar');
+        $cliente->telefoneCliente   = $request->input('telefoneCadastrar');
+        $cliente->enderecoCliente   = $request->input('enderecoCadastrar');
+        $cliente->qtnCortesCliente  = 0;
+        $cliente->statusCliente     = 'ativo';
+        $cliente->save();
 
-        $proximoId = $ultimoId + 1;
 
-        $usuario->nomeUsuario = $request->input('nomeCadastrar');
-        $cliente->nomeCliente = $request->input('nomeCadastrar');
 
-        $usuario->sobrenomeUsuario = $request->input('sobrenomeCadastrar');
-        $cliente->sobrenomeCliente = $request->input('sobrenomeCadastrar');
 
-        $usuario->senhaUsuario = $request->input('senhaCadastrar');
-
-        $usuario->emailUsuario = $request->input('emailCadastrar');
-        $cliente->emailCliente = $request->input('emailCadastrar');
-
-        $usuario->telefoneUsuario = $request->input('telefoneCadastrar');
-        $cliente->telefoneCliente = $request->input('telefoneCadastrar');
-
-        $usuario->enderecoUsuario = $request->input('enderecoCadastrar');
-        $cliente->enderecoCliente = $request->input('enderecoCadastrar');
-
-        $cliente->qtnCortesCliente = 0;
-        $cliente->statusCliente = 'ativo';
-
-        $usuario->tipoUsuario = 'cliente';
-        $usuario->tipoUsuarioId = $proximoId;
-        $usuario->tipoUsuarioType = 'cliente';
+        $usuario = new Usuario();
+        $usuario->nomeUsuario       = $request->input('nomeCadastrar');
+        $usuario->sobrenomeUsuario  = $request->input('sobrenomeCadastrar');
+        $usuario->senhaUsuario      = $request->input('senhaCadastrar');
+        $usuario->emailUsuario      = $request->input('emailCadastrar');
+        $usuario->telefoneUsuario   = $request->input('telefoneCadastrar');
+        $usuario->enderecoUsuario   = $request->input('enderecoCadastrar');
+        $usuario->tipoUsuario       = 'cliente';
+        $usuario->tipoUsuarioId     = 1;
+        $usuario->tipoUsuarioType   = 'cliente';
         $usuario->save();
-
-
 
     }
 
