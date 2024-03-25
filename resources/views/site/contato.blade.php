@@ -68,7 +68,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <form action="{{ route('contato.enviar') }}" id="formContato" method="POST">
+                    <form id="formContato">
                         @csrf
                         <div class="row">
 
@@ -82,15 +82,15 @@
 
                             <div class="col-md-4 form-group">
                                 <label for="phone">Telefone:</label>
-                                <input type="text" id="" class="form-control" required type="tel"
+                                <input type="text" class="form-control" required type="tel"
                                     name="foneContato" id="foneContato" value="{{ old('foneContato') }}">
                                 <div id="foneContatoError" class="error-mensagem"></div>
                             </div>
 
                             <div class="col-md-4 form-group">
                                 <label for="email">Email:</label>
-                                <input type="email" id="emailContato" name="emailContato"
-                                    value="{{ old('foneContato') }}" class="form-control">
+                                <input type="email" id="emailContato" name="emailContato" value="{{ old('foneContato') }}"
+                                    class="form-control">
                                 <div id="emailContatoError" class="error-mensagem"></div>
                             </div>
 
@@ -101,14 +101,14 @@
                                 <label for="message">Escreva uma mensagem:</label>
                                 <textarea name="mensContato" id="mensContato" class="form-control" value="{{ old('mensContato') }}" cols="30"
                                     rows="8"></textarea>
-                                <di id="mensContato" class="error-mensagem"></di>
+                                <di id="mensContatoError" class="error-mensagem"></di>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-6 form-group-btn">
-                                <input type="submit" value="Enviar" class="btn btn-primary" e-mail" class="btn-enviar"
-                                    onclick="formContato(event)">
+                                <input type="submit" value="Enviar" class="btn btn-primary"  class="btn-enviar"
+                                    onclick="sendMail()">
                                 <div id="contatoMensagem" class="msgContato"></div>
                             </div>
                         </div>
@@ -119,7 +119,8 @@
     </section>
     <!-- END section -->
 
-    <section class="section-cover cta" data-stellar-background-ratio="0.5" style="background-image: url(images/big_image_2.jpg);">
+    <section class="section-cover cta" data-stellar-background-ratio="0.5"
+        style="background-image: url(images/big_image_2.jpg);">
         <div class="container">
             <div class="row justify-content-center align-items-center intro">
                 <div class="col-md-8 text-center element-animate">
@@ -129,6 +130,9 @@
             </div>
         </div>
     </section>
+
+
+    
     <!-- END section -->
 
 

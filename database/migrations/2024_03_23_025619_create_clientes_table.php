@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('emailCliente', 255);
             $table->string('telefoneCliente', 11);
             $table->string('enderecoCliente', 150);
-            $table->integer('qntCortesCliente');
+            $table->integer('qtdCortesCliente');
             $table->string('statusCliente', 10);
             $table->timestamps();
         });

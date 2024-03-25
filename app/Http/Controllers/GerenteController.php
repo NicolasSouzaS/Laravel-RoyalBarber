@@ -6,16 +6,23 @@ use App\Models\Funcionario;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class FuncionarioController extends Controller
+class GerenteController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+
+
     public function index()
     {
-        //
+        $idFuncionario = session('id');
+
+        $funcionario = Funcionario::find($idFuncionario);
+
+        if(!$funcionario){
+            abort(404, 'Funcionário não encontrado');
+        }
+
+
+        return view('dashboard.gerente.index', compact('funcionario'));
     }
 
     /**

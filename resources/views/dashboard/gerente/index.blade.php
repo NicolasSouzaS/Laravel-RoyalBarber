@@ -1,0 +1,1 @@
+<h1>Olá, {{ $funcionario->nomeFuncionario  }} {{ $funcionario->sobrenomeFuncionario }}</h1>
