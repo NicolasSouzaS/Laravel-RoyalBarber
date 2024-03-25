@@ -2,26 +2,34 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cliente;
+use App\Models\Funcionario;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ClienteController extends Controller
+class GerenteController extends Controller
 {
+
+
 
     public function index()
     {
-        $idCliente = session('id');
+        $idFuncionario = session('id');
 
-        $cliente = Cliente::find($idCliente);
+        $funcionario = Funcionario::find($idFuncionario);
 
-        if(!$cliente){
-            abort('404', 'Cliente não encontrado');
+        if(!$funcionario){
+            abort(404, 'Funcionário não encontrado');
         }
 
-        return view('dashboard.cliente.index', compact('cliente'));
+
+        return view('dashboard.gerente.index', compact('funcionario'));
     }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         //
@@ -41,10 +49,10 @@ class ClienteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Cliente  $cliente
+     * @param  \App\Models\Funcionario  $funcionario
      * @return \Illuminate\Http\Response
      */
-    public function show(Cliente $cliente)
+    public function show(Funcionario $funcionario)
     {
         //
     }
@@ -52,10 +60,10 @@ class ClienteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Cliente  $cliente
+     * @param  \App\Models\Funcionario  $funcionario
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cliente $cliente)
+    public function edit(Funcionario $funcionario)
     {
         //
     }
@@ -64,10 +72,10 @@ class ClienteController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Cliente  $cliente
+     * @param  \App\Models\Funcionario  $funcionario
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cliente $cliente)
+    public function update(Request $request, Funcionario $funcionario)
     {
         //
     }
@@ -75,10 +83,10 @@ class ClienteController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Cliente  $cliente
+     * @param  \App\Models\Funcionario  $funcionario
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cliente $cliente)
+    public function destroy(Funcionario $funcionario)
     {
         //
     }

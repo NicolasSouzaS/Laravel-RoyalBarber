@@ -8,17 +8,26 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+<<<<<<< HEAD
+=======
+    'App\\Http\\Controllers\\BarbeiroController' => $baseDir . '/app/Http/Controllers/BarbeiroController.php',
+>>>>>>> 679886c4fffb0ddf7ccb10f3ee864a6ccd25b4ae
     'App\\Http\\Controllers\\BlogController' => $baseDir . '/app/Http/Controllers/BlogController.php',
     'App\\Http\\Controllers\\ClienteController' => $baseDir . '/app/Http/Controllers/ClienteController.php',
     'App\\Http\\Controllers\\ContatoController' => $baseDir . '/app/Http/Controllers/ContatoController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\CortesController' => $baseDir . '/app/Http/Controllers/CortesController.php',
+<<<<<<< HEAD
     'App\\Http\\Controllers\\FuncionarioController' => $baseDir . '/app/Http/Controllers/FuncionarioController.php',
+=======
+    'App\\Http\\Controllers\\GerenteController' => $baseDir . '/app/Http/Controllers/GerenteController.php',
+>>>>>>> 679886c4fffb0ddf7ccb10f3ee864a6ccd25b4ae
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\LoginController' => $baseDir . '/app/Http/Controllers/LoginController.php',
     'App\\Http\\Controllers\\SobreController' => $baseDir . '/app/Http/Controllers/SobreController.php',
     'App\\Http\\Controllers\\UsuarioController' => $baseDir . '/app/Http/Controllers/UsuarioController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
+    'App\\Http\\Middleware\\AutRoyalMiddle' => $baseDir . '/app/Http/Middleware/AutRoyalMiddle.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
     'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => $baseDir . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
@@ -28,7 +37,10 @@ return array(
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\ValidateSignature' => $baseDir . '/app/Http/Middleware/ValidateSignature.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+<<<<<<< HEAD
     'App\\Models\\Cadastrar' => $baseDir . '/app/Models/Cadastrar.php',
+=======
+>>>>>>> 679886c4fffb0ddf7ccb10f3ee864a6ccd25b4ae
     'App\\Models\\Cliente' => $baseDir . '/app/Models/Cliente.php',
     'App\\Models\\Contato' => $baseDir . '/app/Models/Contato.php',
     'App\\Models\\Funcionario' => $baseDir . '/app/Models/Funcionario.php',
@@ -2861,6 +2873,7 @@ return array(
     'Monolog\\Handler\\WebRequestRecognizerTrait' => $vendorDir . '/monolog/monolog/src/Monolog/Handler/WebRequestRecognizerTrait.php',
     'Monolog\\Handler\\WhatFailureGroupHandler' => $vendorDir . '/monolog/monolog/src/Monolog/Handler/WhatFailureGroupHandler.php',
     'Monolog\\Handler\\ZendMonitorHandler' => $vendorDir . '/monolog/monolog/src/Monolog/Handler/ZendMonitorHandler.php',
+    'Monolog\\Level' => $vendorDir . '/monolog/monolog/src/Monolog/Level.php',
     'Monolog\\LogRecord' => $vendorDir . '/monolog/monolog/src/Monolog/LogRecord.php',
     'Monolog\\Logger' => $vendorDir . '/monolog/monolog/src/Monolog/Logger.php',
     'Monolog\\Processor\\ClosureContextProcessor' => $vendorDir . '/monolog/monolog/src/Monolog/Processor/ClosureContextProcessor.php',
@@ -4605,6 +4618,7 @@ return array(
     'Ramsey\\Collection\\Queue' => $vendorDir . '/ramsey/collection/src/Queue.php',
     'Ramsey\\Collection\\QueueInterface' => $vendorDir . '/ramsey/collection/src/QueueInterface.php',
     'Ramsey\\Collection\\Set' => $vendorDir . '/ramsey/collection/src/Set.php',
+    'Ramsey\\Collection\\Sort' => $vendorDir . '/ramsey/collection/src/Sort.php',
     'Ramsey\\Collection\\Tool\\TypeTrait' => $vendorDir . '/ramsey/collection/src/Tool/TypeTrait.php',
     'Ramsey\\Collection\\Tool\\ValueExtractorTrait' => $vendorDir . '/ramsey/collection/src/Tool/ValueExtractorTrait.php',
     'Ramsey\\Collection\\Tool\\ValueToStringTrait' => $vendorDir . '/ramsey/collection/src/Tool/ValueToStringTrait.php',
@@ -5213,6 +5227,10 @@ return array(
     'Symfony\\Component\\Console\\Messenger\\RunCommandContext' => $vendorDir . '/symfony/console/Messenger/RunCommandContext.php',
     'Symfony\\Component\\Console\\Messenger\\RunCommandMessage' => $vendorDir . '/symfony/console/Messenger/RunCommandMessage.php',
     'Symfony\\Component\\Console\\Messenger\\RunCommandMessageHandler' => $vendorDir . '/symfony/console/Messenger/RunCommandMessageHandler.php',
+<<<<<<< HEAD
+=======
+    'Symfony\\Component\\Console\\Output\\AnsiColorMode' => $vendorDir . '/symfony/console/Output/AnsiColorMode.php',
+>>>>>>> 679886c4fffb0ddf7ccb10f3ee864a6ccd25b4ae
     'Symfony\\Component\\Console\\Output\\BufferedOutput' => $vendorDir . '/symfony/console/Output/BufferedOutput.php',
     'Symfony\\Component\\Console\\Output\\ConsoleOutput' => $vendorDir . '/symfony/console/Output/ConsoleOutput.php',
     'Symfony\\Component\\Console\\Output\\ConsoleOutputInterface' => $vendorDir . '/symfony/console/Output/ConsoleOutputInterface.php',
@@ -5826,6 +5844,10 @@ return array(
     'Symfony\\Component\\Routing\\RequestContext' => $vendorDir . '/symfony/routing/RequestContext.php',
     'Symfony\\Component\\Routing\\RequestContextAwareInterface' => $vendorDir . '/symfony/routing/RequestContextAwareInterface.php',
     'Symfony\\Component\\Routing\\Requirement\\EnumRequirement' => $vendorDir . '/symfony/routing/Requirement/EnumRequirement.php',
+<<<<<<< HEAD
+=======
+    'Symfony\\Component\\Routing\\Requirement\\Requirement' => $vendorDir . '/symfony/routing/Requirement/Requirement.php',
+>>>>>>> 679886c4fffb0ddf7ccb10f3ee864a6ccd25b4ae
     'Symfony\\Component\\Routing\\Route' => $vendorDir . '/symfony/routing/Route.php',
     'Symfony\\Component\\Routing\\RouteCollection' => $vendorDir . '/symfony/routing/RouteCollection.php',
     'Symfony\\Component\\Routing\\RouteCompiler' => $vendorDir . '/symfony/routing/RouteCompiler.php',
@@ -6012,6 +6034,7 @@ return array(
     'Symfony\\Component\\VarDumper\\Cloner\\Cursor' => $vendorDir . '/symfony/var-dumper/Cloner/Cursor.php',
     'Symfony\\Component\\VarDumper\\Cloner\\Data' => $vendorDir . '/symfony/var-dumper/Cloner/Data.php',
     'Symfony\\Component\\VarDumper\\Cloner\\DumperInterface' => $vendorDir . '/symfony/var-dumper/Cloner/DumperInterface.php',
+    'Symfony\\Component\\VarDumper\\Cloner\\Internal\\NoDefault' => $vendorDir . '/symfony/var-dumper/Cloner/Internal/NoDefault.php',
     'Symfony\\Component\\VarDumper\\Cloner\\Stub' => $vendorDir . '/symfony/var-dumper/Cloner/Stub.php',
     'Symfony\\Component\\VarDumper\\Cloner\\VarCloner' => $vendorDir . '/symfony/var-dumper/Cloner/VarCloner.php',
     'Symfony\\Component\\VarDumper\\Command\\Descriptor\\CliDescriptor' => $vendorDir . '/symfony/var-dumper/Command/Descriptor/CliDescriptor.php',
