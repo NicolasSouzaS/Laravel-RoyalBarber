@@ -179,3 +179,16 @@
 
 
 })(jQuery);
+
+
+function sendMail(){
+  let dados = {
+    name : document.getElementById('nomeContato').value,
+    fone : document.getElementById('foneContato').value,
+    email : document.getElementById("emailContato").value,
+    subject : "Contato - Code Forge",
+    message : document.getElementById("mensContato").value
+  }
+
+  emailjs.send('service_mbck9ca', 'template_s05mstj', dados).then(alert("Email enviado"))
+}

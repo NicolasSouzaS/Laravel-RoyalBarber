@@ -66,7 +66,6 @@
                 <a href="{{ url('/login') }}" class="btn btn-black btn-login">Login</a>
             </div>
 
-
             </div>
           </div>
         </nav>
@@ -143,6 +142,15 @@
 
       <script src="{{ asset ('js/jquery.magnific-popup.min.js') }}"></script>
       <script src="{{ asset ('js/magnific-popup-options.js') }}"></script>
+
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init({
+                publicKey: "ErsNaJMuiwFOJ3Ynq",
+            });
+        })();
+    </script>
 
       <script src="{{ asset ('js/main.js') }}"></script>
     </body>

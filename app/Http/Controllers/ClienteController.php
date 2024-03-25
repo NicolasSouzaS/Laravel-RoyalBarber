@@ -8,21 +8,20 @@ use Illuminate\Http\Request;
 
 class ClienteController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        $idCliente = session('id');
+
+        $cliente = Cliente::find($idCliente);
+
+        if(!$cliente){
+            abort('404', 'Cliente não encontrado');
+        }
+
+        return view('dashboard.cliente.index', compact('cliente'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //

@@ -8,4 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Cliente extends Model
 {
     use HasFactory;
+
+    // Tornando as colunas editáveis e incrementáveis - Processo do dashboard
+    protected $fillable = [
+        'nomeCliente',
+        'sobrenomeCliente',
+        'emailCliente',
+        'telefoneCliente',
+        'enderecoCliente',
+        'qntCortesCliente',
+        'statusCliente',
+    ];
+
+    // Identificação de usuario - Processo de login
+    public function usuario(){
+        return $this->morphOne(Usuario::class,'tipo_usuario');
+    }
 }

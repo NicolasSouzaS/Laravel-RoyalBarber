@@ -8,4 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Usuario extends Model
 {
     use HasFactory;
+
+    // Pegando o tipo do usuario(funcionário ou cliente ) e o id correspondente ao que há na tabela usuário.
+    public function tipo_usuario(){
+        return $this->morphTo('tipo_usuario', 'tipo_usuario_type', 'tipo_usuario_id');
+    }
+
+
+    // Sempre que for criado um novo registro, a coluna "token_lembrete" vai receber um valor aleatorio de 6 digitos.
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            $model->token_lembrete = str_pad(mt_rand(1, 999999), 6, '0', STR_PAD_LEFT);
+        });
+    }
 }
