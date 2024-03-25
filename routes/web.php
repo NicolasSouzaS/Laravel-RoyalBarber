@@ -54,16 +54,16 @@ Route::post('/cadastrar', [CadastrarController::class, 'index'])->name('cadastra
 
 // AUTENTICAÇÃO DE GERENTE
 Route::middleware(['autenticacao:1'])->group(function() {
-    Route::get('/dashboard/gerente/home', [GerenteController::class, 'index'])->name('gerente');
+    Route::get('/dashboard/gerente', [GerenteController::class, 'index'])->name('gerente');
 });
 
 // AUTENTICAÇÃO DE BARBEIRO (FUNCIONÁRIO COMUM)
 Route::middleware(['autenticacao:0'])->group(function () {
-    Route::get('/dashboard/barbeiro/home', [BarbeiroController::class, 'index'])->name('barbeiro');
+    Route::get('/dashboard/barbeiro', [BarbeiroController::class, 'index'])->name('barbeiro');
 });
 
 // AUTENTICAÇÃO DE CLIENTE
 Route::middleware(['autenticacao:cliente'])->group(function () {
-    Route::get('/dashboard/cliente/home', [ClienteController::class, 'index'])->name('cliente');
+    Route::get('/dashboard/cliente', [ClienteController::class, 'index'])->name('cliente');
 });
 
