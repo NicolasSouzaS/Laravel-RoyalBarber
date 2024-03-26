@@ -14,6 +14,9 @@ return new class extends Migration
      */
     public function up()
     {
+
+
+
         Schema::create('usuarios', function(Blueprint $table){
             $table->id();
             $table->string('nome', 50);
@@ -23,8 +26,7 @@ return new class extends Migration
             $table->enum('tipo_usuario_type', ['funcionario', 'cliente'])->default('cliente');
             $table->timestamp('email_verificado_em')->default(DB::raw('CURRENT_TIMESTAMP'))->onUpdate(DB::raw('CURRENT_TIMESTAMP'));
             $table->string('token_lembrete', 6)->unique();
-            $table->timestamp('criado_em')->default(DB::raw('CURRENT_TIMESTAMP()'));
-            $table->timestamp('atualizado_em')->default(DB::raw('CURRENT_TIMESTAMP()'))->onUpdate(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamps();
         });
     }
 
@@ -35,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        
+
     }
 };

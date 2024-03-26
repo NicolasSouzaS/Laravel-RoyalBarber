@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cliente extends Model
 {
-    protected $table = 'cliente';
+    protected $table = 'clientes';
 
     // Tornando as colunas editáveis e incrementáveis - Processo do dashboard
     protected $fillable = [

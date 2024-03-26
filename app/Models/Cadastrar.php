@@ -10,7 +10,6 @@ class Cadastrar extends Model
     protected $table = 'cadastrar';
 
     protected $fillabel = [
-
         'nomeCadastrar',
         'sobrenomeCadastrar',
         'emailCadastrar',

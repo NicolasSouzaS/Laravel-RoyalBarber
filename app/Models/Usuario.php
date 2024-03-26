@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Usuario extends Model
 {
-    protected $table = 'usuario';
+    protected $table = 'usuarios';
+
+    protected $fillable = ['nome', 'email', 'senha','tipo_usuario_id','tipo_usuario_type', 'email_verificado_em', 'token_lembrete', 'criado_em', 'atualizado_em'];
+
+
     // Pegando o tipo do usuario(funcionário ou cliente ) e o id correspondente ao que há na tabela usuário.
     public function tipo_usuario(){
         return $this->morphTo('tipo_usuario', 'tipo_usuario_type', 'tipo_usuario_id');

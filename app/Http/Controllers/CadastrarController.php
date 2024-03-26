@@ -19,16 +19,7 @@ class CadastrarController extends Controller
     {
 
         return view('site.cadastrar');
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -40,14 +31,16 @@ class CadastrarController extends Controller
     public function cadastrar(Request $request)
     {
 
-        $request->validate([
-            'nomeCadastrar'         => 'nullable|string|max:100',
-            'sobrenomeCadastrar'    => 'nullable|string|max:200',
-            'emailCadastrar'        => 'nullable|email|max:250|unique:Usuario.emailUsuario',
-            'senhaCadastrar'        => 'nullable|string|max:255',
-            'telefoneCadastrar'     => 'nullable|string|max:11',
-            'enderecocadastrar'     => 'nullable|string|max:255'
-        ]);
+
+        // dd($request);
+            // $request->validate([
+            //     'nomeCadastrar'         => 'nullable|string|max:100',
+            //     'sobrenomeCadastrar'    => 'nullable|string|max:200',
+            //     'emailCadastrar'        => 'nullable|email|max:250|unique:usuario.email',
+            //     'senhaCadastrar'        => 'nullable|string|max:255',
+            //     'telefoneCadastrar'     => 'nullable|string|max:11',
+            //     'enderecoCadastrar'     => 'nullable|string|max:255'
+            // ]);
 
         $cliente = new Cliente();
 
@@ -56,7 +49,7 @@ class CadastrarController extends Controller
         $cliente->emailCliente      = $request->input('emailCadastrar');
         $cliente->telefoneCliente   = $request->input('telefoneCadastrar');
         $cliente->enderecoCliente   = $request->input('enderecoCadastrar');
-        $cliente->qtnCortesCliente  = 0;
+        $cliente->qtdCortesCliente  = '0';
         $cliente->statusCliente     = 'ativo';
         $cliente->save();
 
@@ -64,61 +57,14 @@ class CadastrarController extends Controller
 
 
         $usuario = new Usuario();
-        $usuario->nomeUsuario       = $request->input('nomeCadastrar');
-        $usuario->sobrenomeUsuario  = $request->input('sobrenomeCadastrar');
-        $usuario->senhaUsuario      = $request->input('senhaCadastrar');
-        $usuario->emailUsuario      = $request->input('emailCadastrar');
-        $usuario->telefoneUsuario   = $request->input('telefoneCadastrar');
-        $usuario->enderecoUsuario   = $request->input('enderecoCadastrar');
-        $usuario->tipoUsuario       = 'cliente';
-        $usuario->tipoUsuarioId     = 1;
-        $usuario->tipoUsuarioType   = 'cliente';
+        $usuario->nome                = $request->input('nomeCadastrar');
+        $usuario->senha               = $request->input('senhaCadastrar');
+        $usuario->email               = $request->input('emailCadastrar');
+        $usuario->tipo_usuario_id     = 1;
+        $usuario->tipo_usuario_type   = 'cliente';
         $usuario->save();
 
-    }
+        return redirect()->route('login');
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Cadastrar  $cadastrar
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Cadastrar $cadastrar)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Cadastrar  $cadastrar
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Cadastrar $cadastrar)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Cadastrar  $cadastrar
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Cadastrar $cadastrar)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Cadastrar  $cadastrar
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Cadastrar $cadastrar)
-    {
-        //
     }
 }
