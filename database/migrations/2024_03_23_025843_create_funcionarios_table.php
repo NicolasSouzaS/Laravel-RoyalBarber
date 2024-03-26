@@ -19,15 +19,14 @@ return new class extends Migration
             $table->string('sobrenomeFuncionario', 200);
             $table->string('emailFuncionario', 255);
             $table->string('especialidadeFuncionario', 100);
-            $table->time('inicioExpedienteFuncionario'); // Corrigido
-            $table->time('fimExpedienteFuncionario'); // Corrigido
-            $table->string('cargoFuncionario', 50); // Corrigido
-            $table->foreign('cargoFuncionario')->references('id')->on('Cargos'); // Corrigido
+            $table->time('inicioExpedienteFuncionario');
+            $table->time('fimExpedienteFuncionario');
+            $table->unsignedBigInteger('cargoFuncionario'); // chave estrangeira
+            $table->foreign('cargoFuncionario')->references('id')->on('cargos')->onDelete('cascade'); // definindo a referência da chave estrangeira
             $table->integer('qntCortesFuncionario');
             $table->string('statusFuncionario', 10);
             $table->timestamps();
         });
-
     }
 
     /**
