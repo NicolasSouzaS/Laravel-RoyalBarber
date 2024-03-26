@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('funcionarios', function (Blueprint $table) {
             $table->id();
+            $table->string('fotoFuncionario',255);
             $table->string('nomeFuncionario', 100);
             $table->string('sobrenomeFuncionario', 200);
             $table->string('emailFuncionario', 255);
