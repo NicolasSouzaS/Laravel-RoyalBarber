@@ -32,15 +32,14 @@ class CadastrarController extends Controller
     {
 
 
-        // dd($request);
-            // $request->validate([
-            //     'nomeCadastrar'         => 'nullable|string|max:100',
-            //     'sobrenomeCadastrar'    => 'nullable|string|max:200',
-            //     'emailCadastrar'        => 'nullable|email|max:250|unique:usuario.email',
-            //     'senhaCadastrar'        => 'nullable|string|max:255',
-            //     'telefoneCadastrar'     => 'nullable|string|max:11',
-            //     'enderecoCadastrar'     => 'nullable|string|max:255'
-            // ]);
+            $request->validate([
+                'nomeCadastrar'         => 'nullable|string|max:100',
+                'sobrenomeCadastrar'    => 'nullable|string|max:200',
+                'emailCadastrar'        => 'nullable|email|max:250',
+                'senhaCadastrar'        => 'nullable|string|max:255',
+                'telefoneCadastrar'     => 'nullable|string|max:11',
+                'enderecoCadastrar'     => 'nullable|string|max:255'
+            ]);
 
         $cliente = new Cliente();
 
