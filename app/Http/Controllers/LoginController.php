@@ -23,9 +23,9 @@ class LoginController extends Controller
         ];
 
         $msg = [
-            'email.required' => 'O campo email é obrigatório !',
-            'email.email' => 'O e-mail informado não é válido.',
-            'password.required' => 'O campo de senha é obrigatório'
+            'email.required' => 'O campo email é obrigatório!',
+            'email.email' => 'O e-mail informado não é válido!c.',
+            'password.required' => 'O campo de senha é obrigatório!'
         ];
 
         $request->validate($regras, $msg);
