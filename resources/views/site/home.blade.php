@@ -82,7 +82,7 @@
                         <div class="col-md-12 slider-wrap">
                             <div class="owl-carousel owl-theme no-nav js-carousel-1">
 
-                                <a href="#" class="img-bg" style="background-image: url('images/img_2.jpg')">
+                                <a href="{{ url ('/cortes') }}" class="img-bg" style="background-image: url('images/img_2.jpg')">
                                     <div class="text">
                                         <span class="icon custom-icon flaticon-scissors"></span>
                                         <h2>Corte de Cabelo Masculino</h2>
@@ -90,7 +90,7 @@
                                     </div>
                                 </a>
 
-                                <a href="#" class="img-bg" style="background-image: url('images/img_1.jpg')">
+                                <a href="{{ url ('/servicos/barba') }}" class="img-bg" style="background-image: url('images/img_1.jpg')">
                                     <div class="text">
                                         <span class="icon custom-icon flaticon-scissors"></span>
                                         <h2>Corte de Barba</h2>
@@ -98,15 +98,15 @@
                                     </div>
                                 </a>
 
-                                <a href="#" class="img-bg last" style="background-image: url('images/img_3.jpeg')">
+                                <a href="{{ url ('/servicos/tratamento') }}" class="img-bg last" style="background-image: url('images/img_3.jpeg')">
                                     <div class="text">
                                         <span class="icon custom-icon flaticon-scissors"></span>
-                                        <h2>Corte de Cabelo e Barba</h2>
+                                        <h2>Tratamentos</h2>
                                         <p>ler mais</p>
                                     </div>
                                 </a>
 
-                                <a href="#" class="img-bg" style="background-image: url('images/img_2.jpg')">
+                                <a href="{{ url ('/servicos/barba') }}" class="img-bg" style="background-image: url('images/img_2.jpg')">
                                     <div class="text">
                                         <span class="icon custom-icon flaticon-scissors"></span>
                                         <h2>Design de Barba</h2>
@@ -114,7 +114,7 @@
                                     </div>
                                 </a>
 
-                                <a href="#" class="img-bg" style="background-image: url('images/img_1.jpg')">
+                                <a href="{{ url ('/servicos/cuidados') }}" class="img-bg" style="background-image: url('images/img_1.jpg')">
                                     <div class="text">
                                         <span class="icon custom-icon flaticon-scissors"></span>
                                         <h2>Tratamento Capilar (hidratação, nutrição, reconstrução)</h2>
@@ -122,14 +122,14 @@
                                     </div>
                                 </a>
 
-                                <a href="#" class="img-bg last" style="background-image: url('images/img_3.jpeg')">
+                                <a href="{{ url ('/servicos/coloracao') }}" class="img-bg last" style="background-image: url('images/img_3.jpeg')">
                                     <div class="text">
                                         <span class="icon custom-icon flaticon-scissors"></span>
                                         <h2>Coloração de Barba e Cabelo</h2>
                                         <p>Ler mais</p>
                                     </div>
                                 </a>
-                                <a href="#" class="img-bg" style="background-image: url('images/img_2.jpg')">
+                                <a href="{{ url ('/servicos/cortes') }}" class="img-bg" style="background-image: url('images/img_2.jpg')">
                                     <div class="text">
                                         <span class="icon custom-icon flaticon-scissors"></span>
                                         <h2>Tratamento Antiqueda de Cabelo</h2>
@@ -137,7 +137,7 @@
                                     </div>
                                 </a>
 
-                                <a href="#" class="img-bg" style="background-image: url('images/img_1.jpg')">
+                                <a href="{{ url ('/servicos/cuidados') }}" class="img-bg" style="background-image: url('images/img_1.jpg')">
                                     <div class="text">
                                         <span class="icon custom-icon flaticon-scissors"></span>
                                         <h2>Barbear Clássico com Toalhas Quentes</h2>
@@ -145,7 +145,7 @@
                                     </div>
                                 </a>
 
-                                <a href="#" class="img-bg last" style="background-image: url('images/img_3.jpeg')">
+                                <a href="{{ url ('/servicos/cuidados') }}" class="img-bg last" style="background-image: url('images/img_3.jpeg')">
                                     <div class="text">
                                         <span class="icon custom-icon flaticon-scissors"></span>
                                         <h2>Tratamento de Couro Cabeludo</h2>
