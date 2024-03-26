@@ -53,13 +53,15 @@ class CadastrarController extends Controller
         $cliente->save();
 
 
-
+        $ultimoUsuario = Usuario::latest('id')->first();
+        $ultimoId = $ultimoUsuario ? $ultimoUsuario->id : 0;
+        $proximoId = $ultimoId + 1;
 
         $usuario = new Usuario();
         $usuario->nome                = $request->input('nomeCadastrar');
         $usuario->senha               = $request->input('senhaCadastrar');
         $usuario->email               = $request->input('emailCadastrar');
-        $usuario->tipo_usuario_id     = 1;
+        $usuario->tipo_usuario_id     = $proximoId;
         $usuario->tipo_usuario_type   = 'cliente';
         $usuario->save();
 
