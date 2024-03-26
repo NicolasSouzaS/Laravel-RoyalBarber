@@ -68,3 +68,7 @@ Route::middleware(['autenticacao:cliente'])->group(function () {
     Route::get('/dashboard/cliente', [ClienteController::class, 'index'])->name('cliente');
 });
 
+Route::get('/sair', function() {
+    session()->flush();
+    return redirect('/');
+})->name('sair');
