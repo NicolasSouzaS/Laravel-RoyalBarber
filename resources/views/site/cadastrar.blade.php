@@ -52,7 +52,7 @@
                     <input type="text" name="enderecoCadastrar" placeholder="Insira o nome de sua rua:" value="{{ old ('enderecoCadastrar') }}">
                     {{ $errors->has('enderecoCadastrar') ? $errors->first('enderecoCadastrar') : '' }}
                 </div>
-
+                
                 <input type="submit" class="btn" value="Criar">
 
                 <div class="link-cadastrar">

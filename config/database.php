@@ -35,6 +35,21 @@ return [
 
     'connections' => [
 
+        'royalbarber' => [
+    'driver' => 'mysql',
+    'host' => env('ROYALBARBER_DB_HOST', '127.0.0.1'),
+    'port' => env('ROYALBARBER_DB_PORT', '3306'),
+    'database' => env('ROYALBARBER_DB_DATABASE', 'royalbarber'),
+    'username' => env('ROYALBARBER_DB_USERNAME', 'root'),
+    'password' => env('ROYALBARBER_DB_PASSWORD', ''),
+    'unix_socket' => env('ROYALBARBER_DB_SOCKET', ''),
+    'charset' => 'utf8mb4',
+    'collation' => 'utf8mb4_unicode_ci',
+    'prefix' => '',
+    'strict' => true,
+    'engine' => null,
+],
+    
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DATABASE_URL'),

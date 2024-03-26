@@ -90,9 +90,4 @@ class LoginController extends Controller
             }
         }
     }
-
-    public function cadastrar()
-    {
-        return view('site.cadastrar');
-    }
 }
