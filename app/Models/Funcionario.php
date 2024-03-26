@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Funcionario extends Model
 {
-    protected $table = 'funcionario';
+    protected $table = 'funcionarios';
 
     // Campos editáveis no banco de dados - Processo do dashboard
     protected $fillable = [
