@@ -22,9 +22,9 @@ return new class extends Migration
             $table->string('especialidadeFuncionario', 100);
             $table->time('inicioExpedienteFuncionario');
             $table->time('fimExpedienteFuncionario');
-            $table->unsignedBigInteger('cargoFuncionario'); // chave estrangeira
-            $table->foreign('cargoFuncionario')->references('id')->on('cargos')->onDelete('cascade'); // definindo a referência da chave estrangeira
+            $table->string('cargoFuncionario', 30);
             $table->integer('qntCortesFuncionario');
+            $table->double('salarioFuncionario', 10,2);
             $table->string('statusFuncionario', 10);
             $table->timestamps();
         });

@@ -24,7 +24,7 @@ class LoginController extends Controller
 
         $msg = [
             'email.required' => 'O campo email é obrigatório!',
-            'email.email' => 'O e-mail informado não é válido!c.',
+            'email.email' => 'O e-mail informado não é válido!.',
             'password.required' => 'O campo de senha é obrigatório!'
         ];
 
@@ -51,42 +51,47 @@ class LoginController extends Controller
             'email' => $usuario->email,
         ]);
 
+
+        // dd($tipoUsuario);
+
         if ($tipoUsuario instanceof Cliente) {
-            $tipo = 'aluno';
+            $tipo = 'cliente';
 
             session([
                 'id' => $tipoUsuario->id,
-                'nome' => $tipoUsuario->nome,
-                'tipo_usuario' => 'cliente',
+                'nome' => $tipoUsuario->nomeCliente,
+                'cargo' => 'cliente',
             ]);
 
             return redirect()->route('cliente');
             // return redirect()->route('home');
         } elseif ($tipoUsuario instanceof Funcionario) {
-            if ($tipoUsuario->cargoFuncionario == '1') {
+            if ($tipoUsuario->cargoFuncionario == 'gerente') {
 
-                $tipo = 'funcionario - gerente';
+
 
                 session([
                     'id'    => $tipoUsuario->id,
                     'nome'  => $tipoUsuario->nomeFuncionario,
-                    'cargo' => 'Gerente'
+                    'cargo' => 'gerente'
                 ]);
 
                 return redirect()->route('gerente');
 
-            } elseif ($tipoUsuario->cargoFuncionario == '0') {
+            } elseif ($tipoUsuario->cargoFuncionario == 'barbeiro') {
                 $tipo = 'funcionario - barbeiro';
 
                 session([
                     'id'    => $tipoUsuario->id,
                     'nome'  => $tipoUsuario->nomeFuncionario,
-                    'cargo' => 'Barbeiro'
+                    'cargo' => 'barbeiro'
                 ]);
 
                 return redirect()->route('barbeiro');
-            } else{
-                echo 'TEM ALGO ERRADO';
+            }
+            else{
+                dd($tipoUsuario);
+                echo 'TEM ALGO ERRADO!!!';
             }
         }
     }

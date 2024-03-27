@@ -54,12 +54,12 @@ Route::post('/cadastrar', [CadastrarController::class, 'cadastrar'])->name('cada
 
 
 // AUTENTICAÇÃO DE GERENTE
-Route::middleware(['autenticacao:1'])->group(function() {
+Route::middleware(['autenticacao:gerente'])->group(function() {
     Route::get('/dashboard/gerente', [GerenteController::class, 'index'])->name('gerente');
 });
 
 // AUTENTICAÇÃO DE BARBEIRO (FUNCIONÁRIO COMUM)
-Route::middleware(['autenticacao:0'])->group(function () {
+Route::middleware(['autenticacao:barbeiro'])->group(function () {
     Route::get('/dashboard/barbeiro', [BarbeiroController::class, 'index'])->name('barbeiro');
 });
 

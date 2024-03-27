@@ -19,6 +19,7 @@ class Funcionario extends Model
         'fimExpedienteFuncionario',
         'cargoFuncionario',
         'qntCortesFuncionario',
+        'salarioFuncionario',
         'statusFuncionario',
     ];
 

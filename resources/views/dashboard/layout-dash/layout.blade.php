@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>Dashboard - @yield('title')</title>
+
+    <link rel="shortcut icon" href="{{ asset ('images/iconroyalbarberBRANCO.png') }}" type="image/x-icon">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -46,7 +48,7 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="{{ url ('/') }}" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>RoyalBarber</h3>
+                    <h3 class="text-primary" style="color: #6c7293 !important">RoyalBarber</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -54,33 +56,32 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Robson</h6>
-                        <span>Admin</span>
+                        <h6 class="mb-0">@if(session('nome')){{ session('nome') }}@endif
+                        </h6>
+                        <span>@if (session('cargo')){{ session ('cargo') }}@endif
+                        </span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Painel</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elementos</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="button.html" class="dropdown-item">Botões</a>
-                            <a href="typography.html" class="dropdown-item">Tipografia</a>
-                            <a href="element.html" class="dropdown-item">Outros Elementos</a>
-                        </div>
-                    </div>
-                    <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
-                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Formulários</a>
-                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tabelas</a>
-                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Gráficos</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Páginas</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="signin.html" class="dropdown-item">Entrar</a>
-                            <a href="signup.html" class="dropdown-item">Registrar</a>
-                            <a href="404.html" class="dropdown-item">Erro 404</a>
-                            <a href="blank.html" class="dropdown-item">Página em Branco</a>
-                        </div>
-                    </div>
+                    @if(session('cargo' ) == 'cliente')
+                    <a href="{{ url ('/dashboard/cliente') }}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Compromissos</a>
+                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Local</a>
+                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Agendamentos</a>
+                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Perfil</a>
+
+                    @elseif(session('cargo') == 'gerente')
+                    <a href="{{ url ('/dashboard/gerente') }}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Funcionários</a>
+                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Clientes</a>
+                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Agendamentos</a>
+                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Perfil</a>
+
+                    @elseif(session('cargo') == 'barbeiro')
+                    <a href="{{ url ('/dashboard/barbeiro') }}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Compromissos</a>
+                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Perfil</a>
+                    @endif
                 </div>
             </nav>
         </div>
@@ -141,11 +142,13 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="img/user.png" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">Robson</span>
+                            <span class="d-none d-lg-inline-flex">@if (session('nome'))
+                                                                        {{ session ('nome') }}
+                                                                @endif
+                            </span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">Meu Perfil</a>
-                            <a href="#" class="dropdown-item">Configurações</a>
                             <a href="{{ url ('sair') }}" class="dropdown-item">Sair</a>
                         </div>
                     </div>
