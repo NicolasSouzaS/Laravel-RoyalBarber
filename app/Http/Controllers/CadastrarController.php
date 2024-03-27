@@ -56,7 +56,7 @@ class CadastrarController extends Controller
         $cliente->save();
 
 
-        $ultimoUsuario = Usuario::latest('id')->first();
+        $ultimoUsuario = Cliente::latest('id')->first();
         $ultimoId = $ultimoUsuario ? $ultimoUsuario->id : 0;
         $proximoId = $ultimoId + 1;
 
