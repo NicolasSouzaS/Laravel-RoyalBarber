@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('fotoFuncionario',255);
             $table->string('nomeFuncionario', 100);
             $table->string('sobrenomeFuncionario', 200);
+            $table->string('numeroFuncionario', 11);
             $table->string('emailFuncionario', 255);
             $table->string('especialidadeFuncionario', 100);
             $table->time('inicioExpedienteFuncionario');

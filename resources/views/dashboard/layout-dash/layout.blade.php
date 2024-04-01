@@ -79,8 +79,8 @@
 
                     @elseif(session('cargo') == 'barbeiro')
                     <a href="{{ url ('/dashboard/barbeiro') }}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Compromissos</a>
-                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Perfil</a>
+                    <a href="{{ url('dashboard/barbeiro/compromisso') }}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Compromissos</a>
+                    <a href="{{ url('dashboard/barbeiro/perfil') }}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Perfil</a>
                     @endif
                 </div>
             </nav>
