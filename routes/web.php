@@ -61,6 +61,7 @@ Route::middleware(['autenticacao:gerente'])->group(function() {
 // AUTENTICAÇÃO DE BARBEIRO (FUNCIONÁRIO COMUM)
 Route::middleware(['autenticacao:barbeiro'])->group(function () {
     Route::get('/dashboard/barbeiro', [BarbeiroController::class, 'index'])->name('barbeiro');
+    Route::get('/dashboard/barbeiro', [BarbeiroController::class, 'clientesMensais'])->name('barbeiro');
     Route::get('/dashboard/barbeiro/perfil', [BarbeiroController::class, 'perfil'])->name('barbeiro.perfil');
     Route::put('dashboard/barbeiro/perfil/{id}',[BarbeiroController::class, 'update'])->name('barbeiro.update');
     Route::get('dashboard/barbeiro/perfil/{id}edit',[BarbeiroController::class, 'edit'])->name('barbeiro.edit');

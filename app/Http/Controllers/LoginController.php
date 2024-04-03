@@ -90,7 +90,7 @@ class LoginController extends Controller
                 return redirect()->route('barbeiro');
             }
             else{
-                dd($tipoUsuario);
+                // dd($tipoUsuario);
                 echo 'TEM ALGO ERRADO!!!';
             }
         }

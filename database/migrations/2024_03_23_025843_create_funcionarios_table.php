@@ -25,6 +25,7 @@ return new class extends Migration
             $table->time('fimExpedienteFuncionario');
             $table->string('cargoFuncionario', 30);
             $table->integer('qntCortesFuncionario');
+            $table->double('valorCorteFuncionario', 10,2);
             $table->double('salarioFuncionario', 10,2);
             $table->string('statusFuncionario', 10);
             $table->timestamps();
