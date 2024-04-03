@@ -21,8 +21,8 @@ class GerenteController extends Controller
             abort(404, 'Funcionário não encontrado');
         }
 
-
         return view('dashboard.gerente.index', compact('funcionario'));
+
     }
 
     /**
