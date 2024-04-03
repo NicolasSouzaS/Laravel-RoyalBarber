@@ -23,21 +23,17 @@ class BarbeiroController extends Controller
 
         // RECEITA
 
-        $receitaMensal = Funcionario::where('id', $userId)
-            ->whereBetween('created_at', [$primeiroDiaMesAtual, Carbon::now()])
-            ->sum('valorCorteFuncionario');
-
         $valorMesAtual = Funcionario::where('id', $userId)
-            ->whereBetween('created_at', [$mesAtual->startOfMonth(), $mesAtual->endOfMonth()])
-            ->sum('valorCorteFuncionario');
+            ->whereMonth('updated_at', '=', now()->month)
+            ->get('valorCorteFuncionario');
 
         $valorMesAnterior = Funcionario::where('id', $userId)
-            ->whereBetween('created_at', [$mesAnterior->startOfMonth(), $mesAnterior->endOfMonth()])
-            ->sum('valorCorteFuncionario');
+            ->whereMonth('updated_at', '=', now()->subMonth()->month)
+            ->get('valorCorteFuncionario');
 
 
         if ($valorMesAnterior != 0) {
-            $porcentagemReceita = ($valorMesAtual - $valorMesAnterior) / $valorMesAnterior * 100;
+            $porcentagemReceita = (($valorMesAtual - $valorMesAnterior) / $valorMesAnterior) * 100;
         } else {
             $porcentagemReceita = 0;
         }
@@ -46,29 +42,29 @@ class BarbeiroController extends Controller
         // CLIENTES
 
         $clienteMensais = Funcionario::where('id', $userId)
-            ->whereBetween('created_at', [$primeiroDiaMesAtual, Carbon::now()])
-            ->count();
+            ->whereMonth('updated_at', '=', now()->month)
+            ->get('qntCortesFuncionario');
 
         $clientesMesAnterior = Funcionario::where('id', $userId)
-            ->whereBetween('created_at', [$mesAnterior->startOfMonth(), $mesAnterior->endOfMonth()])
-            ->count();
+            ->whereMonth('updated_at', '=', now()->subMonth()->month)
+            ->get('qntCortesFuncionario');
 
         if ($clientesMesAnterior != 0) {
-            $porcentagemCliente = ($clienteMensais - $clientesMesAnterior) / $clientesMesAnterior * 100;
+            $porcentagemCliente = (($clienteMensais - $clientesMesAnterior) / $clientesMesAnterior) * 100;
         } else {
             $porcentagemCliente = 0;
         }
 
 
-        // SALÁRIO 
+        // SALÁRIO
 
         $salarioFuncionario = $funcionario->salarioFuncionario;
-        $lucroMensal = $receitaMensal - $salarioFuncionario;
+        $lucroMensal = $valorMesAtual - $salarioFuncionario;
 
         $lucroMensalAnterior = $valorMesAnterior - $salarioFuncionario;
 
         if ($lucroMensalAnterior != 0) {
-            $porcentagemLucro = ($lucroMensal - $lucroMensalAnterior) / $lucroMensalAnterior * 100;
+            $porcentagemLucro = (($lucroMensal - $lucroMensalAnterior) / $lucroMensalAnterior) * 100;
         } else {
             $porcentagemLucro = 0;
         }
@@ -76,11 +72,11 @@ class BarbeiroController extends Controller
         // CORTES
 
         $qntCortesAnterior = Funcionario::where('id', $userId)
-            ->whereBetween('created_at', [$mesAnterior->startOfMonth(), $mesAnterior->endOfMonth()])
+            ->whereBetween('updated_at', [$mesAnterior->startOfMonth(), $mesAnterior->endOfMonth()])
             ->sum('qntCortesFuncionario');
 
         if ($qntCortesAnterior != 0) {
-            $porcentagemCortes = ($funcionario->qntCortesFuncionario - $qntCortesAnterior) / $qntCortesAnterior * 100;
+            $porcentagemCortes = (($funcionario->qntCortesFuncionario - $qntCortesAnterior) / $qntCortesAnterior) * 100;
         } else {
             $porcentagemCortes = 0;
         }
@@ -88,7 +84,7 @@ class BarbeiroController extends Controller
 
 
         return view('dashboard/barbeiro/index', [
-            'valorGerado' => $receitaMensal,
+            'valorGerado' => $valorMesAtual,
             'qntCortes' => $funcionario->qntCortesFuncionario,
             'clienteMensais' => $clienteMensais,
             'lucroMensal' => $lucroMensal,

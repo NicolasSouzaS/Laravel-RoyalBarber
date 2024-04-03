@@ -51,14 +51,14 @@
                   <div class="numbers">
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">Receita gerada</p>
                     <h5 class="text-white font-weight-bolder mb-0">
-                      ${{ $valorGerado }}
-                      
+                      R${{ $valorGerado }}
+
                       @if ($porcentagemReceita >= 0 )
-                      
+
                       <span class="text-success text-sm font-weight-bolder">{{ $porcentagemReceita }}%</span>
-                      
+
                       @else
-                          
+
                       <span class="text-danger text-sm font-weight-bolder">{{ $porcentagemReceita }}%</span>
 
                       @endif
@@ -82,13 +82,13 @@
                   <div class="numbers">
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">Cortes Feitos</p>
                     <h5 class=" text-white font-weight-bolder mb-0">
-                      {{ $qntCortes }} 
+                      {{ $qntCortes }}
                       @if ($porcentagemCortes >= 0 )
-                      
+
                       <span class="text-success text-sm font-weight-bolder">{{ $porcentagemCortes }}%</span>
-                      
+
                       @else
-                          
+
                       <span class="text-danger text-sm font-weight-bolder">{{ $porcentagemCortes }}%</span>
 
                       @endif
@@ -114,12 +114,12 @@
                     <h5 class="text-white font-weight-bolder mb-0">
                       {{ $clienteMensais }}
                       @if ($porcentagemCliente >= 0 )
-                      
+
                       <span class="text-success text-sm font-weight-bolder">{{ $porcentagemCliente }}%</span>
-                      
-                      
+
+
                       @else
-                          
+
                       <span class="text-danger text-sm font-weight-bolder">{{ $porcentagemCliente }}%</span>
 
                       @endif
@@ -143,13 +143,13 @@
                   <div class="numbers">
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">Lucro mensal</p>
                     <h5 class="text-white font-weight-bolder mb-0">
-                      {{ $lucroMensal }}
+                      R${{ $lucroMensal }}
                       @if ($porcentagemLucro >= 0 )
-                      
+
                       <span class="text-success text-sm font-weight-bolder">{{ $porcentagemLucro }}%</span>
-                      
+
                       @else
-                          
+
                       <span class="text-danger text-sm font-weight-bolder">{{ $porcentagemLucro }}%</span>
 
                       @endif
