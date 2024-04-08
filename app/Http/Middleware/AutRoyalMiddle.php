@@ -30,22 +30,19 @@ class AutRoyalMiddle
 
             $tipoUsuario = $usuario->tipo_usuario;
 
-            if ($tipoUsuario) {
+            $tipo = null;
 
-                $tipo = null;
-
-                if ($tipoUsuario instanceof Cliente) {
-                    $tipo = 'cliente';
-                } elseif ($tipoUsuario instanceof Funcionario) {
-                    $tipo = $tipoUsuario->cargoFuncionario;
-                }
+            if ($tipoUsuario instanceof Cliente) {
+                $tipo = 'cliente';
+            } elseif ($tipoUsuario instanceof Funcionario) {
+                $tipo = $tipoUsuario->cargoFuncionario;
             }
+        }
 
-            if ($tipo == $tipoUser) {
-                return $next($request);
-            } else {
-                return back()->withErrors(['email' => 'Acesso não permitido ao perfil']);
-            }
+        if ($tipo == $tipoUser) {
+            return $next($request);
+        } else {
+            return back()->withErrors(['email' => 'Acesso não permitido ao perfil']);
         }
     }
 }

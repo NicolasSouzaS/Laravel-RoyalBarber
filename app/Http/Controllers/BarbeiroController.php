@@ -24,13 +24,16 @@ class BarbeiroController extends Controller
         // RECEITA
 
         $valorMesAtual = Funcionario::where('id', $userId)
-            ->whereMonth('updated_at', '=', now()->month)
-            ->get('valorCorteFuncionario');
+            ->whereMonth('created_at', '=', now()->month)
+            ->value('valorCorteFuncionario');
 
         $valorMesAnterior = Funcionario::where('id', $userId)
-            ->whereMonth('updated_at', '=', now()->subMonth()->month)
-            ->get('valorCorteFuncionario');
+            ->whereMonth('created_at', '=', now()->subMonth()->month)
+            ->value('valorCorteFuncionario');
 
+
+
+        // dd($valorMesAnterior);
 
         if ($valorMesAnterior != 0) {
             $porcentagemReceita = (($valorMesAtual - $valorMesAnterior) / $valorMesAnterior) * 100;
@@ -43,11 +46,11 @@ class BarbeiroController extends Controller
 
         $clienteMensais = Funcionario::where('id', $userId)
             ->whereMonth('updated_at', '=', now()->month)
-            ->get('qntCortesFuncionario');
+            ->value('qntCortesFuncionario');
 
         $clientesMesAnterior = Funcionario::where('id', $userId)
             ->whereMonth('updated_at', '=', now()->subMonth()->month)
-            ->get('qntCortesFuncionario');
+            ->value('qntCortesFuncionario');
 
         if ($clientesMesAnterior != 0) {
             $porcentagemCliente = (($clienteMensais - $clientesMesAnterior) / $clientesMesAnterior) * 100;
@@ -84,14 +87,14 @@ class BarbeiroController extends Controller
 
 
         return view('dashboard/barbeiro/index', [
-            'valorGerado' => $valorMesAtual,
-            'qntCortes' => $funcionario->qntCortesFuncionario,
-            'clienteMensais' => $clienteMensais,
-            'lucroMensal' => $lucroMensal,
-            'porcentagemReceita' => $porcentagemReceita,
-            'porcentagemCliente' => $porcentagemCliente,
-            'porcentagemLucro' => $porcentagemLucro,
-            'porcentagemCortes' => $porcentagemCortes
+            'valorGerado'           => $valorMesAtual,
+            'qntCortes'             => $funcionario->qntCortesFuncionario,
+            'clienteMensais'        => $clienteMensais,
+            'lucroMensal'           => $lucroMensal,
+            'porcentagemReceita'    => $porcentagemReceita  = number_format($porcentagemReceita, 2),
+            'porcentagemCliente'    => $porcentagemCliente  = number_format($porcentagemCliente, 2),
+            'porcentagemLucro'      => $porcentagemLucro    = number_format($porcentagemLucro, 2),
+            'porcentagemCortes'     => $porcentagemCortes   = number_format($porcentagemCortes, 2)
         ]);
     }
 

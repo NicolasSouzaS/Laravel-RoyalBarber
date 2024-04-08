@@ -33,7 +33,10 @@ class LoginController extends Controller
         $email = $request->get('email');
         $password = $request->get('password');
 
+
+
         $usuario = Usuario::where('email', $email)->first();
+
 
         if (!$usuario) {
             return back()->withErrors(['email' => 'O email informado não está cadastrado.']);
@@ -42,20 +45,17 @@ class LoginController extends Controller
         if ($usuario->senha != $password) {
             return back()->withErrors(['password' => 'Senha incorreta.']);
         }
-
+        
         $tipoUsuario = $usuario->tipo_usuario;
-
-        $tipo = null;
 
         session([
             'email' => $usuario->email,
         ]);
 
 
-        // dd($tipoUsuario);
+
 
         if ($tipoUsuario instanceof Cliente) {
-            $tipo = 'cliente';
 
             session([
                 'id' => $tipoUsuario->id,
@@ -64,11 +64,10 @@ class LoginController extends Controller
             ]);
 
             return redirect()->route('cliente');
-            // return redirect()->route('home');
-        } elseif ($tipoUsuario instanceof Funcionario) {
+
+        }
+        elseif ($tipoUsuario instanceof Funcionario){
             if ($tipoUsuario->cargoFuncionario == 'gerente') {
-
-
 
                 session([
                     'id'    => $tipoUsuario->id,
@@ -79,7 +78,6 @@ class LoginController extends Controller
                 return redirect()->route('gerente');
 
             } elseif ($tipoUsuario->cargoFuncionario == 'barbeiro') {
-                $tipo = 'funcionario - barbeiro';
 
                 session([
                     'id'    => $tipoUsuario->id,
@@ -89,10 +87,10 @@ class LoginController extends Controller
 
                 return redirect()->route('barbeiro');
             }
-            else{
-                // dd($tipoUsuario);
-                echo 'TEM ALGO ERRADO!!!';
-            }
+
+        }else{
+            // dd($tipoUsuario);
+            echo 'TEM ALGO ERRADO!!!';
         }
     }
 }
