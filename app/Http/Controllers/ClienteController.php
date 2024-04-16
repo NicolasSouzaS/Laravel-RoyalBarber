@@ -22,6 +22,10 @@ class ClienteController extends Controller
         return view('dashboard.cliente.index', compact('cliente'));
     }
 
+    public function compromissos(){
+        return view('dashboard.cliente.compromissos');
+    }
+
     public function create()
     {
         //

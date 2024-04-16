@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AgendamentoController;
 use App\Http\Controllers\BarbeiroController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CadastrarController;
@@ -71,9 +72,18 @@ Route::middleware(['autenticacao:barbeiro'])->group(function () {
 // AUTENTICAÇÃO DE CLIENTE
 Route::middleware(['autenticacao:cliente'])->group(function () {
     Route::get('/dashboard/cliente', [ClienteController::class, 'index'])->name('cliente');
+    Route::get('/dashboard/cliente/compromissos', [ClienteController::class, 'compromissos'])->name('compromissos');
+    Route::get('/dashboard/cliente/agendamento',[AgendamentoController::class, 'index'])->name('agendar');
+    Route::get('/dashboard/cliente/agendamento/calendario',[AgendamentoController::class, 'calendario'])->name('pagina.calendario');
+
 });
 
 Route::get('/sair', function() {
     session()->flush();
     return redirect('/');
 })->name('sair');
+
+
+Route::get('/dashboard/cliente/obterFuncionariosDisponiveis', [AgendamentoController::class, 'obterFuncionariosDisponiveis'])->name('funcs');
+Route::get('/funcs3', [AgendamentoController::class, 'calendario'])->name('funcs2');
+Route::get('/consultaH', [AgendamentoController::class, 'consultarHorarios'])->name('consultaH');

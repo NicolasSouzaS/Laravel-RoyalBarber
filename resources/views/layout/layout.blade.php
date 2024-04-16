@@ -20,7 +20,7 @@
     <!-- Theme Style -->
     <link rel="stylesheet" href="{{ asset ('css/style.css') }}">
 
-    <link rel="shortcut icon" href="images/iconroyalbarberBRANCO.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('images/logo-royalbarberBRANCO-borda.png') }}" type="image/x-icon">
   </head>
   <body>
 
